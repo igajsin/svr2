@@ -6,6 +6,8 @@
     </appbar>
     <sidemenu>
        <template v-slot:pr>
+         <v-divider ></v-divider>
+         <v-list class="ml-6">
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="title">Поиск:</v-list-item-title>
@@ -58,6 +60,8 @@
           </v-list>
         </v-list-item-content>
       </v-list-item>
+      </v-list>
+      <v-divider ></v-divider>
        </template>
     </sidemenu>
 

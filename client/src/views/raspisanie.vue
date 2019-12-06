@@ -21,9 +21,9 @@
     <sidemenu>
        <template v-slot:rp>
     
-  
-      <v-list class="py-0">
-        <v-list-item class="px-1 py-0">
+  <v-divider ></v-divider>
+      <v-list class="ml-6" >
+        <v-list-item >
           <v-date-picker
             first-day-of-week="1"
             locale="ru"
@@ -86,6 +86,7 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
+      <v-divider ></v-divider>
       </template>
     </sidemenu>
 

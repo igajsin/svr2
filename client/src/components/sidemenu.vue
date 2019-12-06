@@ -1,16 +1,17 @@
 <template>
   <v-navigation-drawer 
-  width="400px"
+  width="350px"
   permanent clipped app  >
       <v-list
-          
-          
+         
+          nav
         >
-          <v-list-item
-            v-for="item in items"
-            :key="item.title"
+        <template v-for="item in items"
+            >
+          <v-list-item :key="item.title" 
+            
             :to="item.to"
-            link
+            link  exact
           >
             <v-list-item-icon>
               <v-icon>{{ item.icon }}</v-icon>
@@ -18,9 +19,16 @@
 
             <v-list-item-content>
               <v-list-item-title>{{ item.title }}</v-list-item-title>
-              <slot :name=item.slotname></slot>
+
+              
+              
             </v-list-item-content>
+            
           </v-list-item>
+        
+          <slot :name=item.slotname></slot>
+          
+        </template>
         </v-list>
       
     </v-navigation-drawer>

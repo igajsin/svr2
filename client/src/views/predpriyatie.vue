@@ -7,7 +7,8 @@
 
     <sidemenu>
        <template v-slot:pr>
-      <v-list class="py-0">
+         <v-divider ></v-divider>
+      <v-list class="ml-6" >
         <v-list-item class="px-1 py-0">
           <v-list-item-content>
             <v-img :src="pr.obraz" aspect-ratio="1.5" max-width="500px" contain>
@@ -39,15 +40,16 @@
             </v-card-actions>
           </v-list-item-content>
         </v-list-item>
-        <v-divider></v-divider>
+        
       </v-list>
+      <v-divider></v-divider>
        </template>
     </sidemenu>
 
     
 
     <v-content>
-      <v-container >
+      <v-container  >
         <v-card class="mb-2">
           <v-card-title>Что мы делаем?</v-card-title>
           <v-card-text v-html="pr.podrobnoe_opisanie"></v-card-text>
