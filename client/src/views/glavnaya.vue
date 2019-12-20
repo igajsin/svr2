@@ -68,7 +68,7 @@
           <v-col class="pt-0">
             <div class="headline font-weight-bold pb-1">Новости</div>
             <v-card flat>
-              <v-card-text class="pb-1 pt-2">
+              <v-card-text >
                 <v-simple-table dense>
                   <tbody>
                     <tr v-for="(novost,i) in novosti" :key="i">
@@ -332,13 +332,15 @@ export default {
     rasps: [[],[],[]],
   }),
   created() {
-    this.zagruzkaraspisaniya();
+    
   },
   mounted(){
+    this.zagruzkaraspisaniya();
+    
     window.setInterval(()=>{
       this.si=this.anyel(this.si,this.sbori);
       this.pi=this.anyel(this.pi,this.predpriyatiya);
-    }, 10000);
+    }, 12000);
 
   },
   methods: {
@@ -350,10 +352,13 @@ export default {
     async zagruzkaraspisaniya() {
       const googleCalendarApiKey = "AIzaSyCSV5kxpkQN3Vfvg_9D_vyBN2DQ7AiBzr4";
       const caladr = "https://www.googleapis.com/calendar/v3/calendars/";
-      const today = new Date();
-      const tomorrow = new Date(today.getTime() + 24 * 60 * 60 * 1000);
-
-      let cals = [
+      const today=new Date();
+      today.setHours(0);
+      today.setMinutes(0);
+      const tomorrow = new Date(today.getTime() + 24 * 60 * 59 * 1000);
+      console.log(today);
+      console.log(tomorrow);
+            let cals = [
         "2kpu7kvisrlvmgkiheabippc20@group.calendar.google.com",
         "ct8a4t3tuim1jjnkno2d6skkck@group.calendar.google.com",
         "uq550s4cd42vsoojk09patvfvk@group.calendar.google.com"
