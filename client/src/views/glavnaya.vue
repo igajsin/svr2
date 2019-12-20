@@ -60,6 +60,12 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
+
+    <template v-slot:append>
+        <div class="pa-2">
+          <v-btn color="#f9e176" block depressed @click="openlink('/svora1/')" >Открыть старую версию сайта</v-btn>
+        </div>
+      </template>
     </v-navigation-drawer>
 
     <v-content class="pt-0">
@@ -84,7 +90,7 @@
             <div class="headline font-weight-bold pb-1">
               <router-link class="mainlink" to="/spravka">Что такое Свора?</router-link>
             </div>
-            <v-card flat>
+            <v-card class="cardhov" flat :to="{path: `/predpriyatiya/svora`}">
               <v-card-text class="pb-1 pt-2">
                 <b>Свора - это центр поддержки русских национальных предприятий.</b>
                 <br />
@@ -92,6 +98,10 @@
                   Здесь собраны сведения о русских национальных предприятиях, о том как их
                   можно поддержать и о мероприятиях, которые они проводят.
                 </p>
+                <p>Свора существует и развивается благодаря вашей поддержке
+                  
+                </p>
+
               </v-card-text>
             </v-card>
           </v-col>
@@ -336,7 +346,7 @@ export default {
   },
   mounted(){
     this.zagruzkaraspisaniya();
-    
+
     window.setInterval(()=>{
       this.si=this.anyel(this.si,this.sbori);
       this.pi=this.anyel(this.pi,this.predpriyatiya);
